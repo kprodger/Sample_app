@@ -28,7 +28,8 @@ group :development do
   gem 'rspec-rails'
   gem 'annotate'
   gem 'faker'
-   gem 'growl'
+  gem 'growl'
+  gem 'heroku'
 end
 
 group :test do
@@ -40,7 +41,8 @@ group :test do
   gem 'autotest'
   gem 'autotest-rails-pure'
   gem 'autotest-fsevent'
-  gem 'autotest-growl' 
+  gem 'autotest-growl'
+  gem 'autotest-notification' 
 end
 
 # To use ActiveModel has_secure_password
