@@ -181,6 +181,7 @@ DEPENDENCIES
   autotest-growl
   autotest-notification
   autotest-rails-pure
+  autotest-standalone
   capybara
   coffee-rails (~> 3.2.1)
   factory_girl_rails

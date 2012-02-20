@@ -42,7 +42,8 @@ group :test do
   gem 'autotest-rails-pure'
   gem 'autotest-fsevent'
   gem 'autotest-growl'
-  gem 'autotest-notification' 
+  gem 'autotest-notification'
+  gem 'autotest-standalone' 
 end
 
 # To use ActiveModel has_secure_password
