@@ -175,7 +175,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate
+  annotate (= 2.4.0)
   autotest
   autotest-fsevent
   autotest-growl
