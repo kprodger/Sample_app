@@ -15,27 +15,6 @@ Spork.prefork do
     # in ./support/ and its subdirectories.
     Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-    RSpec.configure do |config|
-      # == Mock Framework
-      #
-      # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-      #
-      # config.mock_with :mocha
-      # config.mock_with :flexmock
-      # config.mock_with :rr
-      config.mock_with :rspec
-
-      config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-      # If you're not using ActiveRecord, or you'd prefer not to run each of your
-      # examples within a transaction, comment the following line or assign false
-      # instead of true.
-      config.use_transactional_fixtures = true
-      # Needed for Spork
-      ActiveSupport::Dependencies.clear
-    end
-end
-
 Spork.each_run do
   load "#{Rails.root}/config/routes.rb"
   Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f }
@@ -106,4 +85,15 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+  
+  def test_sign_in(user)
+    controller.sign_in(user)
+  end
+  
+  def integration_sign_in(user)
+    visit signin_path
+    fill_in :email,    :with => user.email
+    fill_in :password, :with => user.password
+    click_button
+  end
 end
